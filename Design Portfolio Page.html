@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Portfolio | GraphicDesignHUB</title>
+  <link rel="stylesheet" href="Design Portfolio Page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-mark"><i class="fa-solid fa-circle-user"></i></span><span>GraphicDesignHUB</span></a>
+    <nav class="side-nav">
+      <a href="#"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fa-solid fa-palette"></i><span>Design Classes</span></a>
+      <a href="#"><i class="fa-solid fa-user-tie"></i><span>Find Instructor</span></a>
+      <a href="#"><i class="fa-solid fa-graduation-cap"></i><span>Find Academy</span></a>
+      <a href="#"><i class="fa-solid fa-comments"></i><span>Student Chat</span></a>
+      <a href="#"><i class="fa-solid fa-store"></i><span>Asset Marketplace</span></a>
+      <a class="active" href="#"><i class="fa-regular fa-images"></i><span>Design Portfolio</span></a>
+      <a href="#"><i class="fa-solid fa-folder-open"></i><span>My Assignments</span></a>
+      <a href="#"><i class="fa-solid fa-id-card"></i><span>My Profile</span></a>
+      <a href="#"><i class="fa-solid fa-sliders"></i><span>Preferences</span></a>
+    </nav>
+    <button class="help-button" aria-label="Help"><i class="fa-solid fa-question"></i></button>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <div class="crumbs"><button id="menuToggle" class="icon-button" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button><i class="fa-solid fa-house"></i><span>/</span><span>Design Portfolio</span></div>
+      <div class="top-actions">
+        <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="topSearch" type="search" placeholder="Type here..." /></label>
+        <button class="text-action"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+        <button class="icon-button" aria-label="Settings"><i class="fa-solid fa-gear"></i></button>
+        <button class="icon-button" aria-label="Notifications"><i class="fa-solid fa-bell"></i></button>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="page-heading">
+        <div><p class="eyebrow">YOUR CREATIVE SPACE</p><h1>Design Portfolio</h1><p class="subtitle">Showcase your creativity, organize your projects, and share your best work.</p></div>
+        <button class="primary-button" id="addProjectBtn"><i class="fa-solid fa-plus"></i> Add New Project</button>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-icon pink"><i class="fa-solid fa-layer-group"></i></div><div><p>Total Projects</p><h2 id="projectCount">12</h2><span class="stat-note"><i class="fa-solid fa-arrow-trend-up"></i> Keep creating</span></div></article>
+        <article class="stat-card"><div class="stat-icon blue"><i class="fa-solid fa-eye"></i></div><div><p>Portfolio Views</p><h2>1,284</h2><span class="stat-note">Across your projects</span></div></article>
+        <article class="stat-card"><div class="stat-icon purple"><i class="fa-solid fa-heart"></i></div><div><p>Total Likes</p><h2>326</h2><span class="stat-note">Your work is inspiring</span></div></article>
+      </div>
+
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="Portfolio categories">
+          <button class="tab active" data-filter="all">All Projects <span>12</span></button>
+          <button class="tab" data-filter="branding">Branding</button>
+          <button class="tab" data-filter="uiux">UI/UX</button>
+          <button class="tab" data-filter="illustration">Illustration</button>
+          <button class="tab" data-filter="social">Social Media</button>
+        </div>
+        <label class="sort-select"><i class="fa-solid fa-arrow-down-wide-short"></i><select id="sortSelect"><option value="recent">Most Recent</option><option value="az">Name: A to Z</option></select></label>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card" data-category="branding" data-name="Bloom Identity" data-date="6">
+          <div class="project-art art-bloom"><div class="bloom-sun"></div><span class="art-small">BOTANICAL STUDIO</span><strong>bloom.</strong><span class="art-caption">GROW WITH NATURE</span></div>
+          <div class="project-info"><div><h3>Bloom Identity</h3><p>Branding · Visual identity</p></div><button class="more-btn" aria-label="Project options"><i class="fa-solid fa-ellipsis"></i></button></div>
+          <div class="project-meta"><span><i class="fa-regular fa-eye"></i> 248 views</span><span><i class="fa-regular fa-heart"></i> 42</span><span class="status published">Published</span></div>
+        </article>
+        <article class="project-card" data-category="uiux" data-name="Mindful App" data-date="5">
+          <div class="project-art art-mind"><div class="phone"><div class="phone-notch"></div><span>Good morning,</span><strong>take a breath.</strong><div class="mind-circle"></div><div class="phone-lines"></div><div class="phone-button">Start session</div></div><span class="floating-label">MINDFUL<br>DAILY</span></div>
+          <div class="project-info"><div><h3>Mindful App</h3><p>UI/UX · Mobile app</p></div><button class="more-btn" aria-label="Project options"><i class="fa-solid fa-ellipsis"></i></button></div>
+          <div class="project-meta"><span><i class="fa-regular fa-eye"></i> 196 views</span><span><i class="fa-regular fa-heart"></i> 38</span><span class="status published">Published</span></div>
+        </article>
+        <article class="project-card" data-category="social" data-name="Sunday Coffee" data-date="4">
+          <div class="project-art art-coffee"><span class="coffee-top">SUNDAY<br>IS A MOOD</span><div class="coffee-cup"><span></span></div><strong>slow mornings.</strong></div>
+          <div class="project-info"><div><h3>Sunday Coffee</h3><p>Social Media · Campaign</p></div><button class="more-btn" aria-label="Project options"><i class="fa-solid fa-ellipsis"></i></button></div>
+          <div class="project-meta"><span><i class="fa-regular fa-eye"></i> 312 views</span><span><i class="fa-regular fa-heart"></i> 81</span><span class="status published">Published</span></div>
+        </article>
+        <article class="project-card" data-category="illustration" data-name="Little Worlds" data-date="3">
+          <div class="project-art art-world"><div class="world-shape shape-one"></div><div class="world-shape shape-two"></div><div class="world-shape shape-three"></div><span>little worlds<br><small>ILLUSTRATION SERIES</small></span></div>
+          <div class="project-info"><div><h3>Little Worlds</h3><p>Illustration · Digital art</p></div><button class="more-btn" aria-label="Project options"><i class="fa-solid fa-ellipsis"></i></button></div>
+          <div class="project-meta"><span><i class="fa-regular fa-eye"></i> 174 views</span><span><i class="fa-regular fa-heart"></i> 29</span><span class="status draft">Draft</span></div>
+        </article>
+        <article class="project-card" data-category="branding" data-name="Forma Studio" data-date="2">
+          <div class="project-art art-forma"><div class="forma-shape"></div><span class="forma-label">FORMA<br><small>DESIGN STUDIO</small></span><span class="forma-number">F—01</span></div>
+          <div class="project-info"><div><h3>Forma Studio</h3><p>Branding · Logo design</p></div><button class="more-btn" aria-label="Project options"><i class="fa-solid fa-ellipsis"></i></button></div>
+          <div class="project-meta"><span><i class="fa-regular fa-eye"></i> 221 views</span><span><i class="fa-regular fa-heart"></i> 57</span><span class="status published">Published</span></div>
+        </article>
+        <article class="project-card" data-category="uiux" data-name="Travel Notes" data-date="1">
+          <div class="project-art art-travel"><div class="travel-sun"></div><div class="travel-mountain"></div><div class="travel-card"><span>YOUR NEXT CHAPTER</span><strong>Travel<br>notes.</strong><small>EXPLORE MORE</small></div></div>
+          <div class="project-info"><div><h3>Travel Notes</h3><p>UI/UX · Travel concept</p></div><button class="more-btn" aria-label="Project options"><i class="fa-solid fa-ellipsis"></i></button></div>
+          <div class="project-meta"><span><i class="fa-regular fa-eye"></i> 133 views</span><span><i class="fa-regular fa-heart"></i> 24</span><span class="status draft">Draft</span></div>
+        </article>
+      </div>
+      <div class="empty-state" id="emptyState" hidden><i class="fa-regular fa-folder-open"></i><h3>No projects found</h3><p>Try another category or search term.</p></div>
+      <footer class="footer"><span>© 2026, made with <i class="fa-solid fa-heart"></i> by <b>MyPiHUB</b> for a better web.</span><div><a href="#">GraphicDesignHUB</a><a href="#">About Us</a><a href="#">Blog</a></div></footer>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="projectModal" hidden>
+    <form class="project-modal" id="projectForm">
+      <button type="button" class="modal-close" id="closeModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <p class="eyebrow">ADD TO YOUR COLLECTION</p><h2>New portfolio project</h2><p class="modal-desc">Add a project title and category to your portfolio.</p>
+      <label>Project title<input id="newTitle" required maxlength="60" placeholder="e.g. Brand identity concept"></label>
+      <label>Category<select id="newCategory"><option value="branding">Branding</option><option value="uiux">UI/UX</option><option value="illustration">Illustration</option><option value="social">Social Media</option></select></label>
+      <button class="primary-button full-button" type="submit">Create project</button>
+    </form>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="Design Portfolio Page.js"></script>
+</body>
+</html>

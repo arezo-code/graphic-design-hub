@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphicDesignHUB - Find Academy</title>
+    <link rel="stylesheet" href="Find Academy Page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="page-container">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="white" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18c-2.21,0-4-1.79-4-4c0-1.31 0.63-2.47 1.61-3.2L12,13.6L14.39,10.8C15.37,11.53 16,12.69 16,14C16,16.21 14.21,18 12,18Z"/>
+                    </svg>
+                </div>
+                <span>GraphicDesignHUB</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-palette"></i> <span>Design Classes</span></a>
+                <a href="find-instructor.html" class="menu-item"><i class="fa-solid fa-user-tie"></i> <span>Find Instructor</span></a>
+                <a href="find-academy.html" class="menu-item active"><i class="fa-solid fa-graduation-cap"></i> <span>Find Academy</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-comments"></i> <span>Student Chat</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-store"></i> <span>Asset Marketplace</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-store"></i> <span>Design Portfolio</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-store"></i> <span>My Assignments</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-store"></i> <span>My Profile</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-store"></i> <span>Preferences</span></a>
+            </nav>
+            <div class="sidebar-help-box">
+                <button class="help-large-btn">?</button>
+            </div>
+        </aside>
+
+        <main class="main-wrapper">
+            <header class="navbar">
+                <div class="nav-left">
+                    <button id="toggle-sidebar" class="toggle-btn"><i class="fa-solid fa-bars"></i></button>
+                    <div class="breadcrumbs">
+                        <span class="home-icon"><i class="fa-solid fa-house"></i></span> / Find Academy
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Type here...">
+                    </div>
+                    <button class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+                    <i class="fa-solid fa-gear"></i>
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+            </header>
+
+            <section class="hero-banner-custom">
+                <h1>Find a Design Academy</h1>
+                <p>Search Academies and schedule an appointment with instructors through Academy</p>
+                <div class="search-wrapper-custom">
+                    <input type="text" placeholder="Search an academy by name, software...">
+                    <input type="text" placeholder="Zip Code or Neighborhood">
+                    <button type="button" class="btn-current-loc">CURRENT</button>
+                    <button type="button" class="btn-search-go">SEARCH</button>
+                </div>
+            </section>
+
+            <div class="view-switcher-bar">
+                <button type="button" id="aca-map-btn" class="switch-btn"><i class="fa-solid fa-map-location-dot"></i> Map</button>
+                <button type="button" id="aca-list-btn" class="switch-btn active"><i class="fa-solid fa-list"></i> List</button>
+            </div>
+
+            <div class="two-column-layout">
+                <aside class="left-filters-sidebar">
+                    <input type="text" class="filter-field-input" placeholder="Primary Software">
+                    <input type="text" class="filter-field-input" placeholder="Zip code or Neighborhood">
+                    
+                    <div class="filter-card-box">
+                        <label>Filter By</label>
+                        <select><option>Specialty</option></select>
+                        <select><option>Rating</option></select>
+                        <select><option>Certification</option></select>
+                        <select><option>Languages</option></select>
+                    </div>
+
+                    <div class="filter-card-box">
+                        <label>Programs Offered</label>
+                        <label class="custom-chk-lbl"><input type="checkbox" checked> All Ages</label>
+                        <label class="custom-chk-lbl"><input type="checkbox"> Children Tracks</label>
+                        <label class="custom-chk-lbl"><input type="checkbox"> Adults</label>
+                    </div>
+
+                    <div class="filter-card-box">
+                        <label>View Only</label>
+                        <label class="custom-chk-lbl"><input type="checkbox"> Online Scheduling</label>
+                        <label class="custom-chk-lbl"><input type="checkbox"> Primary Software</label>
+                    </div>
+                </aside>
+
+                <section class="right-results-pane">
+                    <div class="sorting-row-bar">
+                        <span>Sort By</span>
+                        <button type="button" class="sort-btn-action active">NEXT AVAILABLE</button>
+                        <button type="button" class="sort-btn-action">DISTANCE</button>
+                    </div>
+
+                    <div id="aca-cards-wrapper">
+                        <div class="item-data-card">
+        <div class="card-left-content">
+            <div class="item-avatar-box academy-type">
+                <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="item-details-box">
+                <h3>Alpro Design Studio & Academy</h3>
+                <p class="item-spec-tag">UI/UX Design & Motion Graphics Tracks</p>
+                <p class="item-info-txt"><i class="fa-solid fa-location-dot"></i> Lot 193,194 Jalan Nilai Square 6, Bandar Baru Nilai, 71800 Nilai, Negeri Sembilan Malaysia</p>
+                <a href="https://graphicdesignhub.edu" target="_blank" class="item-link-url">https://graphicdesignhub.edu</a>
+                <p class="item-info-txt"><i class="fa-solid fa-phone"></i> +60126504921</p>
+                <p class="item-info-txt language-text">Languages: English, Malay</p>
+            </div>
+        </div>
+        <div class="academy-actions-wrapper">
+            <button type="button" class="btn-pink-large">MORE ABOUT THIS ACADEMY</button>
+            <button type="button" class="btn-pink-sub">FIND AN INSTRUCTOR AND SCHEDULE</button>
+        </div>
+    </div>
+
+    <div class="item-data-card">
+        <div class="card-left-content">
+            <div class="item-avatar-box academy-type">
+                <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="item-details-box">
+                <h3>Pekan Creative Hub</h3>
+                <p class="item-spec-tag">3D Modeling & Animation Specialization Center</p>
+                <p class="item-info-txt"><i class="fa-solid fa-location-dot"></i> Lot 193,194 Jalan Nilai Square 6, Bandar Baru Nilai, 71800 Nilai, Negeri Sembilan Malaysia</p>
+                <a href="https://graphicdesignhub.edu" target="_blank" class="item-link-url">https://graphicdesignhub.edu</a>
+                <p class="item-info-txt"><i class="fa-solid fa-phone"></i> +60126504921</p>
+                <p class="item-info-txt language-text">Languages: English, Malay</p>
+            </div>
+        </div>
+        <div class="academy-actions-wrapper">
+            <button type="button" class="btn-pink-large">MORE ABOUT THIS ACADEMY</button>
+            <button type="button" class="btn-pink-sub">FIND AN INSTRUCTOR AND SCHEDULE</button>
+        </div>
+    </div>
+
+</div>
+
+                    <div id="aca-map-wrapper" class="hidden-page">
+                        <iframe src="d1e40b537f456a52df33f7ab89ce9cc8.jpg" width="100%" height="480" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                    <script src="Find Academy Page.js"></script>
+                </body>
+                </html>

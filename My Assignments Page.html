@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Assignments | GraphicDesignHUB</title>
+  <link rel="stylesheet" href="My Assignments Page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#" aria-label="GraphicDesignHUB home">
+      <span class="brand-mark"><i class="fa-solid fa-circle-user"></i></span>
+      <span>GraphicDesignHUB</span>
+    </a>
+    <nav class="nav-menu" aria-label="Main navigation">
+      <a href="#"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fa-solid fa-palette"></i><span>Design Classes</span></a>
+      <a href="#"><i class="fa-solid fa-user-tie"></i><span>Find Instructor</span></a>
+      <a href="#"><i class="fa-solid fa-graduation-cap"></i><span>Find Academy</span></a>
+      <a href="#"><i class="fa-solid fa-comments"></i><span>Student Chat</span></a>
+      <a href="#"><i class="fa-solid fa-store"></i><span>Asset Marketplace</span></a>
+      <a href="#"><i class="fa-regular fa-images"></i><span>Design Portfolio</span></a>
+      <a class="active" href="#"><i class="fa-solid fa-folder-open"></i><span>My Assignments</span></a>
+      <a href="#"><i class="fa-solid fa-id-card"></i><span>My Profile</span></a>
+      <a href="#"><i class="fa-solid fa-sliders"></i><span>Preferences</span></a>
+    </nav>
+    <button class="help-button" type="button" aria-label="Help"><i class="fa-solid fa-question"></i></button>
+  </aside>
+
+  <div class="main-shell">
+    <header class="topbar">
+      <div class="crumbs">
+        <button class="icon-button mobile-menu" id="menuToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+        <i class="fa-solid fa-house"></i><span class="slash">/</span><span>My Assignments</span>
+      </div>
+      <div class="top-actions">
+        <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="globalSearch" type="search" placeholder="Type here..." /></label>
+        <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+        <button class="icon-button" aria-label="Settings"><i class="fa-solid fa-gear"></i></button>
+        <button class="icon-button notification" aria-label="Notifications"><i class="fa-solid fa-bell"></i><span></span></button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">LEARNING WORKSPACE</p>
+          <h1>My Assignments</h1>
+          <p class="subtitle">Keep track of your design tasks, deadlines, and feedback in one place.</p>
+        </div>
+        <button class="primary-button" id="newAssignmentBtn"><i class="fa-solid fa-plus"></i> Add assignment</button>
+      </section>
+
+      <section class="stats-grid" aria-label="Assignment summary">
+        <article class="stat-card">
+          <div class="stat-icon purple"><i class="fa-solid fa-layer-group"></i></div>
+          <div><p>Total assignments</p><h2 id="totalCount">12</h2><span class="stat-note">Across all classes</span></div>
+          <i class="fa-solid fa-ellipsis stat-more"></i>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon orange"><i class="fa-regular fa-clock"></i></div>
+          <div><p>In progress</p><h2 id="progressCount">4</h2><span class="stat-note">Keep up the good work</span></div>
+          <i class="fa-solid fa-ellipsis stat-more"></i>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
+          <div><p>Completed</p><h2 id="completedCount">6</h2><span class="stat-note">Great progress!</span></div>
+          <i class="fa-solid fa-ellipsis stat-more"></i>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon pink"><i class="fa-solid fa-calendar-day"></i></div>
+          <div><p>Due this week</p><h2 id="dueCount">2</h2><span class="stat-note">Plan your time</span></div>
+          <i class="fa-solid fa-ellipsis stat-more"></i>
+        </article>
+      </section>
+
+      <section class="workspace-card">
+        <div class="workspace-top">
+          <div>
+            <h2>Assignment list</h2>
+            <p>Review your work and see what needs your attention.</p>
+          </div>
+          <div class="list-tools">
+            <label class="search-box list-search"><i class="fa-solid fa-magnifying-glass"></i><input id="assignmentSearch" type="search" placeholder="Search assignments..." /></label>
+            <select id="statusFilter" aria-label="Filter by status">
+              <option value="all">All statuses</option>
+              <option value="In Progress">In progress</option>
+              <option value="Submitted">Submitted</option>
+              <option value="Completed">Completed</option>
+              <option value="Overdue">Overdue</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Assignment category">
+          <button class="tab active" data-tab="all" role="tab">All assignments <span>12</span></button>
+          <button class="tab" data-tab="active" role="tab">Active <span>4</span></button>
+          <button class="tab" data-tab="submitted" role="tab">Submitted <span>2</span></button>
+          <button class="tab" data-tab="completed" role="tab">Completed <span>6</span></button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>ASSIGNMENT</th><th>CLASS</th><th>DUE DATE</th><th>STATUS</th><th>PROGRESS</th><th></th></tr>
+            </thead>
+            <tbody id="assignmentRows">
+              <tr data-status="In Progress" data-tab="active">
+                <td><div class="assignment-cell"><span class="file-icon figma"><i class="fa-brands fa-figma"></i></span><div><strong>Social Media Campaign</strong><small>Project · 4 tasks</small></div></div></td>
+                <td>UI/UX Design</td><td><span class="date"><i class="fa-regular fa-calendar"></i> Oct 12, 2026</span><small class="due-soon">Due in 3 days</small></td>
+                <td><span class="status in-progress"><span></span>In Progress</span></td><td><div class="progress-wrap"><div class="progress-track"><span style="width:65%"></span></div><small>65%</small></div></td>
+                <td><button class="view-button" data-title="Social Media Campaign">View <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+              </tr>
+              <tr data-status="Submitted" data-tab="submitted">
+                <td><div class="assignment-cell"><span class="file-icon illustrator"><i class="fa-solid fa-bezier-curve"></i></span><div><strong>Logo & Brand Identity</strong><small>Practical task · 3 files</small></div></div></td>
+                <td>Logo & Branding</td><td><span class="date"><i class="fa-regular fa-calendar"></i> Oct 10, 2026</span><small>Waiting for review</small></td>
+                <td><span class="status submitted"><span></span>Submitted</span></td><td><div class="progress-wrap"><div class="progress-track"><span style="width:100%"></span></div><small>100%</small></div></td>
+                <td><button class="view-button" data-title="Logo & Brand Identity">View <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+              </tr>
+              <tr data-status="In Progress" data-tab="active">
+                <td><div class="assignment-cell"><span class="file-icon photoshop"><i class="fa-solid fa-image"></i></span><div><strong>Photo Manipulation</strong><small>Practice · 2 tasks</small></div></div></td>
+                <td>Photoshop Suite</td><td><span class="date"><i class="fa-regular fa-calendar"></i> Oct 14, 2026</span><small>5 days left</small></td>
+                <td><span class="status in-progress"><span></span>In Progress</span></td><td><div class="progress-wrap"><div class="progress-track"><span style="width:40%"></span></div><small>40%</small></div></td>
+                <td><button class="view-button" data-title="Photo Manipulation">View <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+              </tr>
+              <tr data-status="Overdue" data-tab="active">
+                <td><div class="assignment-cell"><span class="file-icon blender"><i class="fa-solid fa-cube"></i></span><div><strong>3D Product Mockup</strong><small>Project · 5 tasks</small></div></div></td>
+                <td>3D Modeling</td><td><span class="date"><i class="fa-regular fa-calendar"></i> Oct 05, 2026</span><small class="overdue-text">5 days overdue</small></td>
+                <td><span class="status overdue"><span></span>Overdue</span></td><td><div class="progress-wrap"><div class="progress-track"><span style="width:25%"></span></div><small>25%</small></div></td>
+                <td><button class="view-button" data-title="3D Product Mockup">View <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+              </tr>
+              <tr data-status="Completed" data-tab="completed">
+                <td><div class="assignment-cell"><span class="file-icon vector"><i class="fa-solid fa-pen-nib"></i></span><div><strong>Vector Illustration</strong><small>Practice · Feedback received</small></div></div></td>
+                <td>Vector Academy</td><td><span class="date"><i class="fa-regular fa-calendar"></i> Oct 02, 2026</span><small class="success-text"><i class="fa-solid fa-check"></i> Reviewed by instructor</small></td>
+                <td><span class="status completed"><span></span>Completed</span></td><td><div class="progress-wrap"><div class="progress-track"><span style="width:100%"></span></div><small>100%</small></div></td>
+                <td><button class="view-button" data-title="Vector Illustration">View <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="empty-state" id="emptyState" hidden><i class="fa-regular fa-folder-open"></i><strong>No assignments found</strong><span>Try another search or filter.</span></div>
+        </div>
+        <div class="table-footer"><span id="showingText">Showing 5 of 12 assignments</span><div class="pagination"><button disabled aria-label="Previous page"><i class="fa-solid fa-chevron-left"></i></button><button class="page-number current">1</button><button class="page-number">2</button><button class="page-number">3</button><button aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></button></div></div>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="tip-card">
+          <div class="tip-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <div><h3>Make time for your creativity</h3><p>Break big projects into small tasks and submit your work before the deadline.</p></div>
+          <i class="fa-solid fa-arrow-right tip-arrow"></i>
+        </article>
+        <article class="deadline-card">
+          <div class="deadline-head"><h3><i class="fa-regular fa-calendar-check"></i> Upcoming deadline</h3><span class="tiny-badge">NEXT</span></div>
+          <div class="deadline-body"><div class="calendar-tile"><span>OCT</span><strong>12</strong></div><div><strong>Social Media Campaign</strong><p>UI/UX Design · 3 days left</p></div><button class="round-arrow" data-title="Social Media Campaign" aria-label="Open assignment"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></div>
+        </article>
+      </section>
+
+      <footer class="footer"><span>© 2026, made with <i class="fa-solid fa-heart"></i> by <strong>MyPiHUB</strong> for a better web.</span><div><a href="#">GraphicDesignHUB</a><a href="#">About Us</a><a href="#">Blog</a></div></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-symbol"><i class="fa-solid fa-folder-open"></i></div>
+      <h2 id="modalTitle">Assignment details</h2>
+      <p id="modalDescription">Review your assignment details here.</p>
+      <div class="modal-info"><span>Course</span><strong id="modalCourse">Design Class</strong><span>Status</span><strong id="modalStatus">In Progress</strong></div>
+      <button class="primary-button full-width" id="modalAction">Continue assignment</button>
+    </section>
+  </div>
+  <script src="My Assignments Page.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preferences | GraphicDesignHUB</title>
+  <link rel="stylesheet" href="Preferences.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-mark"><i class="fa-solid fa-circle-user"></i></span><span>GraphicDesignHUB</span></a>
+    <nav class="nav">
+      <a href="#"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fa-solid fa-palette"></i><span>Design Classes</span></a>
+      <a href="#"><i class="fa-solid fa-user-tie"></i><span>Find Instructor</span></a>
+      <a href="#"><i class="fa-solid fa-graduation-cap"></i><span>Find Academy</span></a>
+      <a href="#"><i class="fa-solid fa-comments"></i><span>Student Chat</span></a>
+      <a href="#"><i class="fa-solid fa-store"></i><span>Asset Marketplace</span></a>
+      <a href="#"><i class="fa-regular fa-images"></i><span>Design Portfolio</span></a>
+      <a href="#"><i class="fa-solid fa-folder-open"></i><span>My Assignments</span></a>
+      <a href="#"><i class="fa-solid fa-id-card"></i><span>My Profile</span></a>
+      <a class="active" href="#"><i class="fa-solid fa-sliders"></i><span>Preferences</span></a>
+    </nav>
+    <button class="help-btn" type="button"><i class="fa-regular fa-circle-question"></i><span>Help Center</span></button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="crumbs">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+        <i class="fa-solid fa-house"></i><span>/</span><span>Preferences</span>
+      </div>
+      <div class="top-actions">
+        <label class="search"><i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Type here..." /></label>
+        <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+        <button class="icon-btn" aria-label="Settings"><i class="fa-solid fa-gear"></i></button>
+        <button class="icon-btn" aria-label="Notifications"><i class="fa-solid fa-bell"></i><span class="notification-dot"></span></button>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="page-heading">
+        <div><p class="eyebrow">YOUR EXPERIENCE</p><h1>Preferences</h1><p class="subheading">Personalize GraphicDesignHUB to work the way you do.</p></div>
+        <div class="heading-icon"><i class="fa-solid fa-sliders"></i></div>
+      </div>
+
+      <div class="settings-layout">
+        <div class="settings-menu card">
+          <p class="menu-label">SETTINGS</p>
+          <button class="setting-tab active" data-target="account"><i class="fa-regular fa-user"></i><span><b>Account</b><small>Profile and sign-in</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+          <button class="setting-tab" data-target="appearance"><i class="fa-solid fa-palette"></i><span><b>Appearance</b><small>Theme and display</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+          <button class="setting-tab" data-target="notifications"><i class="fa-regular fa-bell"></i><span><b>Notifications</b><small>What you hear about</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+          <button class="setting-tab" data-target="privacy"><i class="fa-solid fa-shield-halved"></i><span><b>Privacy</b><small>Visibility and security</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+          <button class="setting-tab" data-target="learning"><i class="fa-solid fa-graduation-cap"></i><span><b>Learning</b><small>Your design interests</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+        </div>
+
+        <div class="settings-panel card">
+          <section class="panel-section visible" id="account">
+            <div class="section-title"><div><h2>Account settings</h2><p>Manage your account details and basic preferences.</p></div><span class="section-symbol"><i class="fa-regular fa-user"></i></span></div>
+            <div class="profile-mini"><div class="avatar">A</div><div><b>Arezo Student</b><p>Student account · GraphicDesignHUB</p></div><button class="outline-btn" id="editProfile">Edit profile</button></div>
+            <div class="form-grid">
+              <label class="field">Language<select id="language"><option>English</option><option>Dari</option><option>Persian</option></select></label>
+              <label class="field">Time zone<select><option>Afghanistan Time (UTC +4:30)</option><option>UTC</option><option>Pakistan Standard Time</option></select></label>
+              <label class="field full">Email address<input type="email" value="student@example.com" /></label>
+            </div>
+            <div class="notice"><i class="fa-solid fa-circle-info"></i><span>Your changes in this demo are shown on this page only. Connect a backend to save them permanently.</span></div>
+          </section>
+
+          <section class="panel-section" id="appearance">
+            <div class="section-title"><div><h2>Appearance</h2><p>Choose how GraphicDesignHUB looks on your screen.</p></div><span class="section-symbol"><i class="fa-solid fa-palette"></i></span></div>
+            <div class="option-row"><div class="option-copy"><b>Color theme</b><p>Choose a comfortable display style.</p></div><div class="theme-options"><button class="theme-choice selected" data-theme="light"><span class="theme-preview light-preview"></span>Light</button><button class="theme-choice" data-theme="dark"><span class="theme-preview dark-preview"></span>Dark</button><button class="theme-choice" data-theme="system"><span class="theme-preview system-preview"></span>System</button></div></div>
+            <div class="option-row"><div class="option-copy"><b>Compact sidebar</b><p>Make the left navigation more compact.</p></div><label class="switch"><input type="checkbox" id="compactToggle"><span class="slider"></span></label></div>
+            <div class="option-row"><div class="option-copy"><b>Reduce animations</b><p>Use fewer animated interface effects.</p></div><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+          </section>
+
+          <section class="panel-section" id="notifications">
+            <div class="section-title"><div><h2>Notifications</h2><p>Choose which updates you would like to receive.</p></div><span class="section-symbol"><i class="fa-regular fa-bell"></i></span></div>
+            <div class="option-row"><div class="option-copy"><b>Assignment updates</b><p>Due dates, feedback, and new grades.</p></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+            <div class="option-row"><div class="option-copy"><b>Student chat messages</b><p>Get notified when someone messages you.</p></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+            <div class="option-row"><div class="option-copy"><b>Class announcements</b><p>News and updates from your classes.</p></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+            <div class="option-row"><div class="option-copy"><b>Tips and recommendations</b><p>Discover design resources and learning ideas.</p></div><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+            <div class="option-row"><div class="option-copy"><b>Email notifications</b><p>Send important updates to your email.</p></div><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+          </section>
+
+          <section class="panel-section" id="privacy">
+            <div class="section-title"><div><h2>Privacy & security</h2><p>Control how your profile and activity are shared.</p></div><span class="section-symbol"><i class="fa-solid fa-shield-halved"></i></span></div>
+            <div class="option-row"><div class="option-copy"><b>Public portfolio</b><p>Allow other students to view your design portfolio.</p></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+            <div class="option-row"><div class="option-copy"><b>Show online status</b><p>Let classmates know when you are active.</p></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+            <div class="option-row"><div class="option-copy"><b>Allow direct messages</b><p>Let students contact you through Student Chat.</p></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+            <div class="security-box"><i class="fa-solid fa-lock"></i><div><b>Password and account security</b><p>Keep your sign-in details safe.</p></div><button class="outline-btn" id="passwordBtn">Change password</button></div>
+          </section>
+
+          <section class="panel-section" id="learning">
+            <div class="section-title"><div><h2>Learning preferences</h2><p>Help us tailor classes and resources to your goals.</p></div><span class="section-symbol"><i class="fa-solid fa-graduation-cap"></i></span></div>
+            <label class="field">Your current level<select><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></label>
+            <div class="interest-block"><b>Design interests</b><p>Select the areas you want to explore.</p><div class="chips"><label><input type="checkbox" checked><span>Graphic Design</span></label><label><input type="checkbox" checked><span>UI/UX Design</span></label><label><input type="checkbox"><span>Logo & Branding</span></label><label><input type="checkbox"><span>Illustration</span></label><label><input type="checkbox"><span>Motion Design</span></label><label><input type="checkbox"><span>3D Modeling</span></label></div></div>
+            <label class="field">Weekly learning goal<select><option>3–5 hours</option><option>1–2 hours</option><option>5–8 hours</option><option>8+ hours</option></select></label>
+          </section>
+
+          <div class="panel-footer"><span id="statusMessage" aria-live="polite">Your preferences are up to date.</span><div><button class="text-btn" id="resetBtn">Reset</button><button class="save-btn" id="saveBtn"><i class="fa-solid fa-check"></i> Save changes</button></div></div>
+        </div>
+      </div>
+      <footer class="footer"><span>© 2026, made with <i class="fa-solid fa-heart"></i> by <b>MyPiHUB</b> for a better web.</span><div><a href="#">GraphicDesignHUB</a><a href="#">About Us</a><a href="#">Blog</a></div></footer>
+    </section>
+  </main>
+  <script src="Preferences.js"></script>
+</body>
+</html>

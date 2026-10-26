@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphicDesignHUB - Asset Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-purple: #6200EA;
+            --gradient-start: #E040FB;
+            --gradient-end: #00E5FF;
+            --bg-color: #F4F6F9;
+            --sidebar-width: 250px;
+            --text-dark: #333333;
+            --text-muted: #777777;
+            --accent-pink: #E91E63;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #E0E0E0;
+            position: fixed;
+            height: 100vh;
+            padding-top: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px 25px 20px;
+            gap: 10px;
+            color: #1A237E;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #7C4DFF, #00B0FF);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-list {
+            list-style: none;
+            overflow-y: auto;
+            flex: 1;
+            padding-bottom: 80px;
+        }
+
+        .menu-item a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 25px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .menu-item a:hover {
+            background-color: #F8F9FA;
+            color: var(--primary-purple);
+        }
+
+        .menu-item.active a {
+            background-color: #F3E5F5;
+            color: var(--primary-purple);
+            border-left: 4px solid var(--primary-purple);
+            padding-left: 21px;
+        }
+
+        .menu-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-help {
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #E040FB, #6200EA);
+            border-radius: 12px;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        /* Navbar Layout */
+        .navbar {
+            background-color: #FFFFFF;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .nav-breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+        }
+
+        .nav-breadcrumbs a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .nav-breadcrumbs i {
+            font-size: 0.75rem;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-container input {
+            background-color: #F1F3F4;
+            border: none;
+            padding: 8px 12px 8px 35px;
+            border-radius: 8px;
+            width: 220px;
+            outline: none;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            color: var(--text-muted);
+        }
+
+        .nav-action-btn {
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .content-area {
+            padding: 25px 30px;
+        }
+
+        .section-box {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .asset-card {
+            background: #FFFFFF;
+            border: 1px solid #EBEFF2;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .asset-image-box {
+            width: 100%;
+            height: 140px;
+            background-color: #ECEFF1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .asset-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .asset-info {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .asset-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .asset-tag {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .asset-price {
+            color: #00B0FF;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .brand-logo {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #6200EA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .brand-name {
+            color: var(--text-dark);
+        }
+
+        .asset-desc {
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .buy-now-btn {
+            background-color: #E91E63;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        .buy-now-btn:hover {
+            background-color: #D81B60;
+        }
+
+        .table-header-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .entries-select select {
+            padding: 4px 8px;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            margin: 0 5px;
+            outline: none;
+        }
+
+        .table-search input {
+            padding: 6px 12px;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            width: 200px;
+            outline: none;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .results-table th {
+            text-align: left;
+            padding: 12px 10px;
+            color: var(--text-muted);
+            font-weight: 500;
+            border-bottom: 1px solid #EBEFF2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .results-table td {
+            padding: 15px 10px;
+            border-bottom: 1px solid #F1F3F4;
+            vertical-align: middle;
+        }
+
+        .table-asset-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .table-thumb {
+            width: 40px;
+            height: 30px;
+            background-color: #ECEFF1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .table-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .table-brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #F8F9FA;
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid #ECEFF1;
+        }
+
+        .table-brand-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #E91E63;
+        }
+
+        .footer-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 30px;
+            color: var(--text-muted);
+            border-top: 1px solid #EBEFF2;
+            background-color: #FFFFFF;
+            margin-top: auto;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-purple);
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-area">
+            <div class="logo-icon"><i class="fa-solid fa-shapes"></i></div>
+            <span>GraphicDesignHUB</span>
+        </div>
+        
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-graduation-cap"></i> Design Classes</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-user-tie"></i> Find Instructor</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-building-columns"></i> Find Academy</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-comments"></i> Student Chat</a></li>
+            <li class="menu-item active"><a href="#"><i class="fa-solid fa-store"></i> Asset Marketplace</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-briefcase"></i> Design Portfolio</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-book-open"></i> My Assignments</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-user"></i> My Profile</a></li>
+            <li class="menu-item"><a href="#"><i class="fa-solid fa-sliders"></i> Preferences</a></li>
+        </ul>
+
+        <div class="sidebar-help">?</div>
+    </aside>
+
+    <div class="main-content">
+        <header class="navbar">
+            <div class="nav-breadcrumbs">
+                <a href="#"><i class="fa-solid fa-house"></i></a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="#">Marketplace</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span style="color: #333; font-weight: 500;">Marketplace</span>
+            </div>
+
+            <div class="nav-right">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Type here...">
+                </div>
+                <button class="nav-action-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+                <button class="nav-action-btn"><i class="fa-solid fa-gear"></i></button>
+                <button class="nav-action-btn"><i class="fa-solid fa-bell"></i></button>
+            </div>
+        </header>
+
+        <main class="content-area">
+            
+            <div class="section-box">
+                <div class="section-title">Search Marketplaces and order what you need</div>
+                
+                <div class="cards-container">
+                    <div class="asset-card">
+                        <div class="asset-image-box">
+                            <i class="fa-solid fa-palette fa-4x" style="color: #B0BEC5;"></i>
+                        </div>
+                        <div class="asset-info">
+                            <div class="asset-meta">
+                                <span class="asset-tag">Figma UI Assets</span>
+                                <span class="asset-price">5 RM</span>
+                            </div>
+                            <div class="brand-row">
+                                <div class="brand-logo" style="background-color: #FF3D00;">F</div>
+                                <span class="brand-name">Figma Assets</span>
+                            </div>
+                            <p class="asset-desc">As Premium Kits works through a huge amount of modern UI component structures.</p>
+                            <button class="buy-now-btn">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <div class="asset-card">
+                        <div class="asset-image-box">
+                            <i class="fa-solid fa-bezier-curve fa-4x" style="color: #B0BEC5;"></i>
+                        </div>
+                        <div class="asset-info">
+                            <div class="asset-meta">
+                                <span class="asset-tag">Vector Mockups</span>
+                                <span class="asset-price">10 RM</span>
+                            </div>
+                            <div class="brand-row">
+                                <div class="brand-logo" style="background-color: #00E5FF;">A</div>
+                                <span class="brand-name">Adobe Cloud</span>
+                            </div>
+                            <p class="asset-desc">Vectors is something that every design project has his or her core styling from.</p>
+                            <button class="buy-now-btn">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <div class="asset-card">
+                        <div class="asset-image-box">
+                            <i class="fa-solid fa-box-open fa-4x" style="color: #B0BEC5;"></i>
+                        </div>
+                        <div class="asset-info">
+                            <div class="asset-meta">
+                                <span class="asset-tag">3D Templates</span>
+                                <span class="asset-price">15 RM</span>
+                            </div>
+                            <div class="brand-row">
+                                <div class="brand-logo" style="background-color: #7C4DFF;">B</div>
+                                <span class="brand-name">Blender HUB</span>
+                            </div>
+                            <p class="asset-desc">Different models have different style taste, and various standard formats.</p>
+                            <button class="buy-now-btn">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <div class="asset-card">
+                        <div class="asset-image-box">
+                            <i class="fa-solid fa-font fa-4x" style="color: #B0BEC5;"></i>
+                        </div>
+                        <div class="asset-info">
+                            <div class="asset-meta">
+                                <span class="asset-tag">Typography Packs</span>
+                                <span class="asset-price">20 RM</span>
+                            </div>
+                            <div class="brand-row">
+                                <div class="brand-logo" style="background-color: #E91E63;">M</div>
+                                <span class="brand-name">Minimalist Studio</span>
+                            </div>
+                            <p class="asset-desc">Different typefaces have different taste, and various clean visual styles.</p>
+                            <button class="buy-now-btn">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title" style="margin-bottom: 15px;">Other results for asset search</div>
+                
+                <div class="table-header-controls">
+                    <div class="entries-select">
+                        <select>
+                            <option>7</option>
+                            <option>10</option>
+                            <option>25</option>
+                        </select>
+                        entries per page
+                    </div>
+                    <div class="table-search">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%;">Name</th>
+                            <th style="width: 20%;">Category</th>
+                            <th style="width: 25%;">Service By</th>
+                            <th style="width: 10%;">Discount</th>
+                            <th style="width: 10%;">Price</th>
+                            <th style="width: 10%;">ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="table-asset-profile">
+                                    <div class="table-thumb"><i class="fa-regular fa-image" style="padding: 8px; color: #999;"></i></div>
+                                    <span style="font-weight: 600;">Figma Assets Kit</span>
+                                </div>
+                            </td>
+                            <td>Graphics</td>
+                            <td>
+                                <div class="table-brand-badge">
+                                    <div class="table-brand-dot" style="background-color: #FF3D00;"></div>
+                                    <span>Figma Team</span>
+                                </div>
+                            </td>
+                            <td>0</td>
+                            <td style="font-weight: 600;">10 RM</td>
+                            <td style="color: var(--text-muted);">243598234</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+
+        <footer class="footer-line">
+            <div>© 2026, made with ♥ by MyPiHUB for a better web.</div>
+            <div class="footer-links">
+                <a href="#">GraphicDesignHUB</a>
+                <a href="#">About Us</a>
+                <a href="#">Blog</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.menu-item a').forEach(item => {
+            item.addEventListener('click', function(e) {
+                document.querySelectorAll('.menu-item').forEach(li => li.classList.remove('active'));
+                this.parentElement.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+

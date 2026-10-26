@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphicDesignHUB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Project 2-1.css">
+</head>
+<body>
+
+    <div id="login-page" class="page active">
+        <div class="top-wave-bg">
+            <h1 class="welcome-title">Welcome to GraphicDesignHUB!</h1>
+            <p class="welcome-subtitle">Learn professional graphic design tools and techniques with us.</p>
+        </div>
+        
+        <div class="bottom-content-area">
+            <div class="login-card">
+                <h2>Sign in to GraphicDesignHUB</h2>
+                <div class="social-login">
+                    <button class="social-btn fab fa-facebook-f"></button>
+                    <button class="social-btn fab fa-google"></button>
+                </div>
+                
+                <form id="login-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Username or Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-signin">SIGN IN</button>
+                    
+                    <div class="form-footer">
+                        <a href="#">Forgot password?</a>
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                </form>
+                
+                <div class="divider">or</div>
+                <button class="btn btn-signup">SIGN UP</button>
+            </div>
+            
+            <footer class="login-footer">
+                <a href="#">Download Android App</a>
+                <a href="#">Download iOS App</a>
+                <a href="#">About HUB</a>
+                <a href="#">Our Team</a>
+                <a href="#">Blog</a>
+            </footer>
+        </div>
+    </div>
+
+
+    <div id="dashboard-page" class="page">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="white" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18c-2.21,0-4-1.79-4-4c0-1.31 0.63-2.47 1.61-3.2L12,13.6L14.39,10.8C15.37,11.53 16,12.69 16,14C16,16.21 14.21,18 12,18Z"/>
+                    </svg>
+                </div>
+                <span>GraphicDesignHUB</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-palette"></i> <span>Design Classes</span></a>
+                <a href="Find Instructor Page.html" class="menu-item"><i class="fa-solid fa-user-tie"></i> <span>Find Instructor</span></a>
+                <a href="Find Academy Page.html" class="menu-item"><i class="fa-solid fa-graduation-cap"></i> <span>Find Academy</span></a>
+                <a href="Student Chat Page.html" class="menu-item"><i class="fa-solid fa-comments"></i> <span>Student Chat</span></a>
+                <a href="Asset Marketplace Page.html" class="menu-item"><i class="fa-solid fa-store"></i> <span>Asset Marketplace</span></a>
+                <a href="Design Portfolio Page.html" class="menu-item"><i class="fa-solid fa-images"></i> <span>Design Portfolio</span></a>
+                <a href="My Assignments Page.html" class="menu-item"><i class="fa-solid fa-folder-open"></i> <span>My Assignments</span></a>
+                <a href="My Profile Page.html" class="menu-item"><i class="fa-solid fa-id-card"></i> <span>My Profile</span></a>
+                <a href="Preferences.html" class="menu-item"><i class="fa-solid fa-sliders"></i> <span>Preferences</span></a>
+            </nav>
+            
+            <div class="sidebar-help-box">
+                <button class="help-large-btn">?</button>
+            </div>
+        </aside>
+
+        <div class="main-wrapper">
+            <header class="navbar">
+                <div class="nav-left">
+                    <button id="toggle-sidebar" class="toggle-btn"><i class="fa-solid fa-bars"></i></button>
+                    <div class="breadcrumbs">
+                        <span class="home-icon"><i class="fa-solid fa-house"></i></span> / Dashboard
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="search-box">
+                        <a href="Setting.html" class="settings-icon" title="Settings">
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                        <input type="text" placeholder="Type here...">
+                    </div>
+                    <button id="logout-btn" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+                    <i class="fa-solid fa-gear settings-icon"></i>
+                    <i class="fa-solid fa-bell notification-icon"></i>
+                </div>
+            </header>
+
+            <main class="dashboard-content">
+                <h1 class="dash-title">Welcome To GraphicDesignHUB!</h1>
+
+                <div class="dashboard-grid">
+                    <div class="dash-card">
+                        <div class="card-header">
+                            <h3>Popularity by Design Classes</h3>
+                            <i class="fa-solid fa-circle-info info-icon"></i>
+                        </div>
+                        <div class="card-body donut-section">
+                            <div class="chart-container">
+                                <svg class="donut-chart" viewBox="0 0 42 42">
+                                    <circle cx="21" cy="21" r="15.915" fill="#fff"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e0e0e0" stroke-width="4"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e91e63" stroke-width="4" stroke-dasharray="19 81" stroke-dashoffset="25"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#2196f3" stroke-width="4" stroke-dasharray="4 96" stroke-dashoffset="6"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#4caf50" stroke-width="4" stroke-dasharray="10 90" stroke-dashoffset="2"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#ffeb3b" stroke-width="4" stroke-dasharray="21 79" stroke-dashoffset="92"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#9e9e9e" stroke-width="4" stroke-dasharray="2 98" stroke-dashoffset="71"></circle>
+                                </svg>
+                            </div>
+                            <ul class="data-list">
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-pink"></i> UI/UX Design Masterclass</span>
+                                    <span class="list-value">19%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-blue"></i> Logo & Branding Basics</span>
+                                    <span class="list-value">4%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-green"></i> 3D Modeling & Blender</span>
+                                    <span class="list-value">10%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-yellow"></i> Advanced Photoshop Suite</span>
+                                    <span class="list-value">21%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-gray"></i> Vector Illustration Academy</span>
+                                    <span class="list-value">2%</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="details-btn">MORE DETAILS</button>
+                    </div>
+
+                    <div class="dash-card">
+                        <div class="card-header">
+                            <h3>Enrolment by Design Academies</h3>
+                            <i class="fa-solid fa-circle-info info-icon"></i>
+                        </div>
+                        <div class="card-body donut-section">
+                            <div class="chart-container">
+                                <svg class="donut-chart" viewBox="0 0 42 42">
+                                    <circle cx="21" cy="21" r="15.915" fill="#fff"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e0e0e0" stroke-width="4"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#2c3e50" stroke-width="4" stroke-dasharray="15 85" stroke-dashoffset="25"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#3498db" stroke-width="4" stroke-dasharray="12 88" stroke-dashoffset="10"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#2ecc71" stroke-width="4" stroke-dasharray="5 95" stroke-dashoffset="98"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#9b59b6" stroke-width="4" stroke-dasharray="9 91" stroke-dashoffset="93"></circle>
+                                    <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#e67e22" stroke-width="4" stroke-dasharray="14 86" stroke-dashoffset="84"></circle>
+                                </svg>
+                            </div>
+                            <ul class="data-list">
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-dark"></i> Alpro Design Studio</span>
+                                    <span class="list-value">15%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-blue2"></i> Pekan Creative Hub</span>
+                                    <span class="list-value">12%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-green2"></i> OK Graphic Center</span>
+                                    <span class="list-value">5%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-purple"></i> Creative Arts Nilai</span>
+                                    <span class="list-value">9%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-square icon-orange"></i> Digital Design Institute</span>
+                                    <span class="list-value">14%</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="details-btn">MORE DETAILS</button>
+                    </div>
+
+                    <div class="dash-card">
+                        <div class="card-header">
+                            <h3>Smart Market Usage by Software</h3>
+                            <i class="fa-solid fa-circle-info info-icon"></i>
+                        </div>
+                        <div class="card-body usage-section">
+                            <ul class="data-list compact">
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-circle icon-pink"></i> Figma Assets</span>
+                                    <span class="list-value">25%</span>
+                                </li>
+                                <li>
+                                    <span class="list-name"><i class="fa-solid fa-circle icon-blue"></i> Adobe Creative Cloud</span>
+                                    <span class="list-value">33%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="dash-card">
+                        <div class="card-header">
+                            <div>
+                                <h3>Design Skills Index</h3>
+                                <div class="health-rate">70% <span class="green-text">+3%</span></div>
+                            </div>
+                        </div>
+                        <div class="card-body chart-wrapper">
+                            <svg class="line-chart" viewBox="0 0 300 100">
+                                <path d="M 0 80 Q 50 90 100 60 T 200 40 T 300 20" fill="none" stroke="#1d1d42" stroke-width="3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="dashboard-footer">
+                    <p>&copy; 2026, made with <i class="fa-solid fa-heart heart-icon"></i> by <strong>MyPiHUB</strong> for a better web.</p>
+                    <div class="footer-links">
+                        <a href="#">GraphicDesignHUB</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script src="Project 2 -1.js"></script>
+</body>
+</html>

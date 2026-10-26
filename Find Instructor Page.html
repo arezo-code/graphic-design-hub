@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphicDesignHUB - Find Instructor</title>
+    <link rel="stylesheet" href="Find Instructor Page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="dashboard-page" class="page">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="white" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18c-2.21,0-4-1.79-4-4c0-1.31 0.63-2.47 1.61-3.2L12,13.6L14.39,10.8C15.37,11.53 16,12.69 16,14C16,16.21 14.21,18 12,18Z"/>
+                    </svg>
+                </div>
+                <span>GraphicDesignHUB</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item" data-target="dashboard-section"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                <a href="#" class="menu-item" data-target="classes-section"><i class="fa-solid fa-palette"></i> <span>Design Classes</span></a>
+                <a href="#" class="menu-item active" data-target="instructor-section"><i class="fa-solid fa-user-tie"></i> <span>Find Instructor</span></a>
+                <a href="#" class="menu-item" data-target="academy-section"><i class="fa-solid fa-graduation-cap"></i> <span>Find Academy</span></a>
+                <a href="#" class="menu-item" data-target="chat-section"><i class="fa-solid fa-comments"></i> <span>Student Chat</span></a>
+                <a href="#" class="menu-item" data-target="marketplace-section"><i class="fa-solid fa-store"></i> <span>Asset Marketplace</span></a>
+                <a href="#" class="menu-item" data-target="portfolio-section"><i class="fa-solid fa-images"></i> <span>Design Portfolio</span></a>
+                <a href="#" class="menu-item" data-target="assignments-section"><i class="fa-solid fa-folder-open"></i> <span>My Assignments</span></a>
+                <a href="#" class="menu-item" data-target="profile-section"><i class="fa-solid fa-id-card"></i> <span>My Profile</span></a>
+                <a href="#" class="menu-item" data-target="preferences-section"><i class="fa-solid fa-sliders"></i> <span>Preferences</span></a>
+            </nav>
+            
+            <div class="sidebar-help-box">
+                <button class="help-large-btn">?</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+        
+            <header class="top-header">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-house"></i> / <span id="page-title-breadcrumb">Find Instructor</span>
+                </div>
+                <div class="header-right">
+                    <div class="top-search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Type here...">
+                    </div>
+                    <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+                    <div class="header-status-icons">
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div id="instructor-section" class="dynamic-page-content">
+                <section class="instructor-hero-banner">
+                    <h1>Find an Instructor</h1>
+                    <p>Search Mentors and schedule a private design session</p>
+                    <div class="hero-search-wrapper">
+                        <input type="text" placeholder="Search an instructor by name, skill...">
+                        <input type="text" placeholder="Zip Code or City">
+                        <button class="btn-current">CURRENT</button>
+                        <button class="btn-search-submit">SEARCH</button>
+                    </div>
+                </section>
+
+                <div class="view-toggle-container">
+                    <button id="show-map-btn" class="view-btn"><i class="fa-solid fa-map-location-dot"></i> Map</button>
+                    <button id="show-list-btn" class="view-btn active"><i class="fa-solid fa-list"></i> List</button>
+                </div>
+
+                <div class="instructor-main-layout">
+                    <aside class="left-filters-pane">
+                        <input type="text" class="pane-input" placeholder="Primary Skill">
+                        <input type="text" class="pane-input" placeholder="Zip code or Neighborhood">
+                        
+                        <div class="filter-box-card">
+                            <label>Filter By</label>
+                            <select><option>Specialty</option></select>
+                            <select><option>Gender</option></select>
+                            <select><option>Level</option></select>
+                            <select><option>Languages</option></select>
+                        </div>
+
+                        <div class="filter-box-card">
+                            <label>Target Audience</label>
+                            <label class="custom-checkbox"><input type="checkbox" checked> All Ages</label>
+                            <label class="custom-checkbox"><input type="checkbox"> Children</label>
+                            <label class="custom-checkbox"><input type="checkbox"> Adults</label>
+                        </div>
+                    </aside>
+
+                    <section class="results-layout-pane">
+                        <div class="sorting-header-bar">
+                            <span>Sort By</span>
+                            <button class="sort-action-btn active">NEXT AVAILABLE</button>
+                            <button class="sort-action-btn">DISTANCE</button>
+                        </div>
+
+                        <div id="instructors-cards-list" class="sub-toggle-section">
+                            <div class="profile-mentor-card">
+                                <div class="mentor-avatar-box">
+                                    <img src="c6f3394289ca9038f446be207c032d8a.jpg" alt="Instructor Profile">
+                                </div>
+                                <div class="mentor-info-box">
+                                    <h3>Prof. Dr. Muhammad Shamsir Bin Mohd Aris</h3>
+                                    <p class="mentor-tag">UI/UX Design Masterclass & Brand Identity</p>
+                                    <p class="mentor-status-text">Visiting Consultant</p>
+                                    <p class="mentor-address-text"><i class="fa-solid fa-location-dot"></i> Lot 193,194 Jalan Nilai Square 6, Bandar Baru Nilai, Malaysia</p>
+                                    <a href="#" class="mentor-link-site">https://graphicdesignhub.edu</a>
+                                    <p class="mentor-phone-text"><i class="fa-solid fa-phone"></i> +60126504921</p>
+                                    <p class="mentor-lang-tags">English, Malay</p>
+                                    <button class="action-booking-btn">NEXT AVAILABLE: TUESDAY, MARCH 22</button>
+                                </div>
+                            </div>
+
+                            <div class="profile-mentor-card">
+                                <div class="mentor-avatar-box">
+                                    <img src="10eb80a7bdde374360de237ceeea4a1b.jpg" alt="Instructor Profile">
+                                </div>
+                                <div class="mentor-info-box">
+                                    <h3>PROF. DR. MADYA DR. Khairullah</h3>
+                                    <p class="mentor-tag">3D Modeling & Blender Professional Course</p>
+                                    <p class="mentor-status-text">Senior Lecturer</p>
+                                    <p class="mentor-address-text"><i class="fa-solid fa-location-dot"></i> Lot 193,194 Jalan Nilai Square 6, Bandar Baru Nilai, Malaysia</p>
+                                    <a href="#" class="mentor-link-site">https://graphicdesignhub.edu</a>
+                                    <p class="mentor-phone-text"><i class="fa-solid fa-phone"></i> +60126504921</p>
+                                    <p class="mentor-lang-tags">English, Malay</p>
+                                    <button class="action-booking-btn">NEXT AVAILABLE: TUESDAY, MARCH 22</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="instructors-map-view" class="sub-toggle-section hidden">
+
+                            <script src="Find Instructor Page.js"></script>
+                        </body>
+                        </html>

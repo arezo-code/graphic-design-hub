@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Chat | GraphicDesignHUB</title>
+  <link rel="stylesheet" href="Student Chat Page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-icon"><i class="fa-solid fa-circle-user"></i></span><span>GraphicDesign<span class="brand-hub">HUB</span></span></a>
+    <nav class="nav">
+      <a href="#"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fa-solid fa-palette"></i><span>Design Classes</span></a>
+      <a href="#"><i class="fa-solid fa-user-tie"></i><span>Find Instructor</span></a>
+      <a href="#"><i class="fa-solid fa-graduation-cap"></i><span>Find Academy</span></a>
+      <a class="active" href="#"><i class="fa-solid fa-comments"></i><span>Student Chat</span></a>
+      <a href="#"><i class="fa-solid fa-store"></i><span>Asset Marketplace</span></a>
+      <a href="#"><i class="fa-regular fa-images"></i><span>Design Portfolio</span></a>
+      <a href="#"><i class="fa-solid fa-folder-open"></i><span>My Assignments</span></a>
+      <a href="#"><i class="fa-solid fa-id-card"></i><span>My Profile</span></a>
+      <a href="#"><i class="fa-solid fa-sliders"></i><span>Preferences</span></a>
+    </nav>
+    <button class="help-btn" aria-label="Help"><i class="fa-solid fa-question"></i></button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="breadcrumb"><i class="fa-solid fa-house"></i><span>/</span><span>Student Chat</span></div>
+      <div class="top-actions">
+        <label class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="globalSearch" type="search" placeholder="Type here..." /></label>
+        <button class="text-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+        <button class="icon-btn" aria-label="Settings"><i class="fa-solid fa-gear"></i></button>
+        <button class="icon-btn" aria-label="Notifications"><i class="fa-solid fa-bell"></i></button>
+      </div>
+    </header>
+
+    <section class="page">
+      <div class="page-heading">
+        <div><h1>Student Chat</h1><p>Connect with classmates, share ideas, and learn together.</p></div>
+        <button class="primary-btn" id="newChatBtn"><i class="fa-solid fa-plus"></i> New conversation</button>
+      </div>
+
+      <section class="chat-shell">
+        <aside class="chat-list-panel">
+          <div class="chat-list-header">
+            <h2>Messages <span class="count">4</span></h2>
+            <button class="icon-btn light" id="filterBtn" title="Show unread only"><i class="fa-solid fa-sliders"></i></button>
+          </div>
+          <label class="chat-search"><i class="fa-solid fa-magnifying-glass"></i><input id="chatSearch" type="search" placeholder="Search conversations..." /></label>
+          <div class="tabs"><button class="tab active" data-tab="all">All chats</button><button class="tab" data-tab="unread">Unread <span>2</span></button></div>
+          <div class="conversation-list" id="conversationList">
+            <button class="conversation selected" data-name="sara ahmadi" data-unread="true" data-chat="sara">
+              <span class="avatar pink">SA<span class="online"></span></span>
+              <span class="conversation-copy"><span class="conversation-top"><strong>Sara Ahmadi</strong><time>10:42 AM</time></span><span class="preview">I shared the color palette with you.</span></span><span class="unread-dot"></span>
+            </button>
+            <button class="conversation" data-name="design study group" data-unread="true" data-chat="group">
+              <span class="avatar blue"><i class="fa-solid fa-users"></i><span class="online"></span></span>
+              <span class="conversation-copy"><span class="conversation-top"><strong>Design Study Group</strong><time>Yesterday</time></span><span class="preview">Mina: Great work everyone!</span></span><span class="unread-dot"></span>
+            </button>
+            <button class="conversation" data-name="mina rahimi" data-unread="false" data-chat="mina">
+              <span class="avatar purple">MR</span>
+              <span class="conversation-copy"><span class="conversation-top"><strong>Mina Rahimi</strong><time>Yesterday</time></span><span class="preview">Thank you for your feedback 😊</span></span>
+            </button>
+            <button class="conversation" data-name="ahmad noori" data-unread="false" data-chat="ahmad">
+              <span class="avatar green">AN</span>
+              <span class="conversation-copy"><span class="conversation-top"><strong>Ahmad Noori</strong><time>Mon</time></span><span class="preview">Can you send me the assignment?</span></span>
+            </button>
+          </div>
+          <div class="list-note"><i class="fa-solid fa-shield-halved"></i> Keep your learning conversations respectful.</div>
+        </aside>
+
+        <section class="message-panel">
+          <div class="message-header">
+            <div class="contact">
+              <span class="avatar pink large" id="activeAvatar">SA<span class="online"></span></span>
+              <span><strong id="activeName">Sara Ahmadi</strong><small id="activeStatus"><span class="status-dot"></span> Online now</small></span>
+            </div>
+            <div class="message-tools"><button class="icon-btn light" title="Search in chat"><i class="fa-solid fa-magnifying-glass"></i></button><button class="icon-btn light" title="More options"><i class="fa-solid fa-ellipsis-vertical"></i></button></div>
+          </div>
+          <div class="messages" id="messages">
+            <div class="day-divider"><span>Today, October 9</span></div>
+            <div class="message-row incoming"><span class="mini-avatar pink">SA</span><div><div class="bubble">Hey! How is your UI/UX assignment going?</div><time>10:35 AM</time></div></div>
+            <div class="message-row outgoing"><div><div class="bubble">Hi Sara! It’s going well. I’m working on the colors and layout now.</div><time>10:38 AM <i class="fa-solid fa-check-double read"></i></time></div></div>
+            <div class="message-row incoming"><span class="mini-avatar pink">SA</span><div><div class="bubble">I shared the color palette with you. Maybe it can help! 🎨</div><time>10:42 AM</time></div></div>
+            <div class="file-message"><span class="file-icon"><i class="fa-solid fa-file-image"></i></span><span><strong>Color-Palette.png</strong><small>PNG image · 1.8 MB</small></span><button class="icon-btn light" aria-label="Download file"><i class="fa-solid fa-download"></i></button></div>
+            <div class="message-row outgoing"><div><div class="bubble">This is perfect, thank you so much! 💜</div><time>10:44 AM <i class="fa-solid fa-check-double read"></i></time></div></div>
+          </div>
+          <div class="typing" id="typingIndicator" hidden><span></span><span></span><span></span> Sara is typing...</div>
+          <form class="composer" id="messageForm">
+            <button type="button" class="icon-btn attach" id="attachBtn" title="Attach file"><i class="fa-solid fa-paperclip"></i></button>
+            <input type="file" id="fileInput" hidden />
+            <input id="messageInput" type="text" placeholder="Write a message..." autocomplete="off" />
+            <button type="button" class="icon-btn emoji-btn" id="emojiBtn" title="Add emoji"><i class="fa-regular fa-face-smile"></i></button>
+            <button type="submit" class="send-btn" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div class="composer-hint">Press <kbd>Enter</kbd> to send your message</div>
+        </section>
+
+        <aside class="details-panel">
+          <div class="details-top"><span class="avatar pink xl" id="detailsAvatar">SA</span><h3 id="detailsName">Sara Ahmadi</h3><p>Graphic Design Student</p><span class="profile-pill"><i class="fa-solid fa-circle-check"></i> Student member</span></div>
+          <div class="details-section"><h4>Shared files</h4><button class="shared-file"><span class="shared-icon image"><i class="fa-regular fa-image"></i></span><span><strong>Color-Palette.png</strong><small>Today · 10:42 AM</small></span><i class="fa-solid fa-chevron-right"></i></button><button class="shared-file"><span class="shared-icon doc"><i class="fa-regular fa-file-pdf"></i></span><span><strong>UI-UX-Notes.pdf</strong><small>Oct 7 · 3.2 MB</small></span><i class="fa-solid fa-chevron-right"></i></button></div>
+          <div class="details-section"><h4>Quick actions</h4><button class="quick-action" id="viewProfile"><i class="fa-regular fa-user"></i> View profile <i class="fa-solid fa-chevron-right"></i></button><button class="quick-action" id="muteChat"><i class="fa-regular fa-bell-slash"></i> Mute notifications <i class="fa-solid fa-chevron-right"></i></button></div>
+          <div class="privacy-card"><i class="fa-solid fa-lock"></i><span><strong>Your space, your safety</strong><small>Never share your password or private account details in chat.</small></span></div>
+        </aside>
+      </section>
+      <footer>© 2026, made with <i class="fa-solid fa-heart"></i> by <strong>MyPiHUB</strong> for a better web.<span>GraphicDesignHUB &nbsp;&nbsp; About Us &nbsp;&nbsp; Blog</span></footer>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="Student Chat Page.js"></script>
+</body>
+</html>
